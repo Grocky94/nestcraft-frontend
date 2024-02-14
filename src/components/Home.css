@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.home-body {
+    /* height: 100vh; */
+    width: 80%;
+    margin: auto;
+    /* border: 1px solid #000; */
+}
+
+.body-title {
+    height: 12vh;
+    width: 100%;
+    /* border: 1px solid #000; */
+    display: flex;
+}
+
+.page-title {
+    position: relative;
+    height: 100%;
+    width: 50%;
+    /* border: 1px solid #000; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: lightblue;
+}
+
+.add-div {
+    height: 100%;
+    width: 50%;
+    /* border: 1px solid #000; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.new-category-button {
+    height: 5vh;
+    width: 40%;
+    color: white;
+    background-color: lightgreen;
+    border: none;
+    font-size: 1.1em;
+    border-radius: 10px;
+}
+
+.model-div {
+    /* height: 60vh; */
+    width: 25%;
+    border: 1px solid #000;
+    position: absolute;
+    margin: auto;
+    top: 20%;
+    left: 35%;
+    border-radius: 10px;
+    box-shadow: 2px 2px gainsboro;
+    background-color: white;
+    box-sizing: border-box;
+}
+
+.model-div-title {
+    text-align: center;
+}
+
+.model-span {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.model-div-label {
+    font-size: medium;
+    margin-bottom: 2%;
+    margin-left: 4%;
+}
+
+.model-div-input {
+    height: 5vh;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.model-div-select {
+    margin: 5%;
+}
+
+.model-div-file-input {
+    margin: 5%;
+
+}
+
+.model-div-button {
+    height: 5vh;
+    width: 90%;
+    margin-left: 5%;
+    margin-bottom: 5%;
+}

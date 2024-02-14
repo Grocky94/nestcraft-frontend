@@ -1,0 +1,22 @@
+.navBar-body {
+    width: 100%;
+    /* border: 1px solid #000; */
+}
+
+.navBar-sign {
+    height: 12.5vh;
+    width: 100%;
+    /* border: 1px solid #000; */
+    display: flex;
+    align-items: center;
+}
+
+.navBar-login {
+    height: 5vh;
+    width: 5%;
+    margin-left: auto;
+    margin-right: 2%;
+    background-color: orange;
+    color: white;
+    border: none;
+}

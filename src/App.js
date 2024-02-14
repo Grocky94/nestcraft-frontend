@@ -1,13 +1,23 @@
 // import './App.css';
 
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import Home from "./components/Home";
 import NavBar from "./components/NavBar";
 import Register from "./components/Register";
 import Login from "./components/Login";
 import Page from "./components/Page";
+import { useEffect } from "react";
+
+
 
 function App() {
+
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!localStorage.getItem('token')) {
+      navigate("/login")
+    }
+  }, []);
   return (
     <Routes>
       <Route exact path="/" element={<Home navbar={NavBar} page={Page} />} />

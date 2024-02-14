@@ -110,3 +110,57 @@
     justify-content: space-around;
     margin-top: 5px;
 }
+
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+    .page-title {
+        font-size: 8px;
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .page-head-body {
+        height: 8vh;
+        border: 1px solid #000;
+    }
+
+    .page-head-button {
+        height: 25px;
+        font-size: 0.7em;
+    }
+
+    .page-checkbox {
+        height: 15px;
+        width: 15px;
+    }
+
+    .page-head-title>p {
+        font-size: 0.9em;
+    }
+
+    .multiple-service-children {
+        height: 8vh;
+        border: 1px solid #000;
+    }
+
+    .page-checkbox-children {
+        height: 15px;
+        width: 15px;
+    }
+
+    .image-circle-frame {
+        height: 4vh;
+        width: 8%;
+    }
+
+    .short-detail-body {
+        width: 75%;
+    }
+
+    .short-detail-body-title {
+        font-size: 1em;
+    }
+
+    .short-detail-body-description {
+        font-size: 0.5em;
+    }
+}

@@ -54,3 +54,33 @@
     text-align: center;
     color: #000;
 }
+
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+    /*  */
+
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    #reg-headline {
+        font-size: 15px;
+    }
+
+    .reg-label {
+        font-size: 0.7em;
+    }
+
+    .reg-input {
+        height: 2vh;
+    }
+
+    #reg-submit-btn {
+        height: 3vh;
+        margin: 2% 35%;
+        font-size: 10px;
+    }
+
+    #reg-last {
+        font-size: 10px;
+    }
+
+}

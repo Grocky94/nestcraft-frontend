@@ -51,9 +51,9 @@ const Login = () => {
                 <h1 id='login-headline'>Login</h1>
                 <form onSubmit={handleSubmit}>
                     <label className='login-labels'>Email:</label><br />
-                    <input className="login-input" type='email' name='email' onChange={handleChange} value={userData.email} /><br />
+                    <input className="login-input" type='email' name='email' onChange={handleChange} value={userData.email} autocomplete="off" /><br />
                     <label className='login-labels' >Password:</label><br />
-                    <input className="login-input" type='password' name='password' onChange={handleChange} value={userData.password} /><br />
+                    <input className="login-input" type='password' name='password' onChange={handleChange} value={userData.password} autocomplete="off"/><br />
                     <input className="login-input-btn" type='submit' value="Login" />
                 </form>
                 <p id='login-last'>If you are a new user <b onClick={() => redirect("/register")}>Register</b></p>

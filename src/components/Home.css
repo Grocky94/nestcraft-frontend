@@ -101,3 +101,85 @@
     margin-left: 5%;
     margin-bottom: 5%;
 }
+
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+    .new-category-button {
+        font-size: 0.7em;
+        width: 60%;
+
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .new-category-button {
+        font-size: 0.6em;
+        width: 80%;
+        height: 20px;
+    }
+
+    .page-title {
+        font-size: 10px;
+    }
+
+    .model-div-title {
+        font-size: 0.8em;
+    }
+
+    .model-div {
+        width: 50%;
+        left: 25%;
+        height: 27vh;
+    }
+
+    .model-div-label {
+        font-size: small;
+    }
+
+    .model-div-input {
+        height: 20px;
+        width: 85%;
+        margin-left: 4.5%;
+    }
+
+    .model-span {
+        font-size: x-small;
+    }
+
+    .model-div-select {
+        margin: 3% 4%;
+    }
+
+    select {
+        width: 60px;
+        font-size: 14px;
+    }
+
+    select option {
+        font-size: 8px;
+        /* Adjust font size for options */
+        padding: 1px;
+        /* Adjust padding for options */
+    }
+
+    .model-div-file-input {
+        margin: 2% 4%;
+        height: 20px;
+        width: 80%;
+        font-size: xx-small;
+    }
+
+    .model-div-button {
+        height: 18px;
+        width: 85%;
+        margin-left: 5%;
+        margin-bottom: 5%;
+        border: 1px solid black;
+        font-size: smaller;
+    }
+
+    .model-div-option {
+        font-size: small;
+        width: 80%;
+    }
+
+}

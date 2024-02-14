@@ -92,23 +92,26 @@ const Page = ({ model }) => {
                 <button className='page-head-button' onClick={selectAndDelete}>Delete</button>
             </div>
             <div className='multiple-service-body'>
-                {showCategory.map((cat) => {
-                    counter++
-                    console.log(cat, "image here")
-                    return (
-                        <div className='multiple-service-children' key={cat._id} style={{ backgroundColor: `${cat.color}` }}>
-                            <input className='page-checkbox-children' type='checkbox' checked={selectedCheckboxes.includes(cat._id)}
-                                onChange={(event) => handleCheckboxChange(event, cat._id)} />
-                            <div className='image-circle-frame'>
-                                <img className="image-circle"src={`http://localhost:4000/image/${cat.image}`} alt='upload' />
+                {showCategory.length === 0 ? (
+                    <p>No categories found.</p>
+                ) : (
+                    showCategory.map((cat) => {
+                        counter++;
+                        return (
+                            <div className='multiple-service-children' key={cat._id} style={{ backgroundColor: `${cat.color}` }}>
+                                <input className='page-checkbox-children' type='checkbox' checked={selectedCheckboxes.includes(cat._id)} onChange={(event) => handleCheckboxChange(event, cat._id)} />
+                                <div className='image-circle-frame'>
+                                    <img className="image-circle" src={`http://localhost:4000/image/${cat.image}`} alt='upload' />
+                                </div>
+                                <div className='short-detail-body'>
+                                    <p className='short-detail-body-title'>{cat.name}</p>
+                                    <p className='short-detail-body-description'>{cat.description}</p>
+                                </div>
                             </div>
-                            <div className='short-detail-body'>
-                                <p className='short-detail-body-title'>{cat.name}</p>
-                                <p className='short-detail-body-description'>{cat.description}
-                                </p>
-                            </div>
-                        </div>)
-                })}
+                        );
+                    })
+                )}
+
             </div>
             {counter >= 5 && <div className='page-counter'>
                 <button onClick={handlePrevClick} disabled={page === 1}>Prev</button>

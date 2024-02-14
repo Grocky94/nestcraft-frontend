@@ -98,9 +98,9 @@ const Home = ({ navbar: NavBar, page: Page }) => {
                     <form onSubmit={handleSubmit} >
                         <h1 className='model-div-title'>Add Category</h1><span className='model-span' onClick={() => setModel(false)}>X</span>
                         <label className='model-div-label'>Name:</label><br />
-                        <input type='text' name='name' className="model-div-input" onChange={handleChange} value={serviceData.name} /><br />
+                        <input type='text' name='name' className="model-div-input" onChange={handleChange} value={serviceData.name} autocomplete="off" /><br />
                         <label className='model-div-label'>Description:</label><br />
-                        <input type='text' name='description' className="model-div-input" onChange={handleChange} value={serviceData.description} /><br />
+                        <input type='text' name='description' className="model-div-input" onChange={handleChange} value={serviceData.description} autocomplete="off" /><br />
                         <select className="model-div-select" onChange={(event) => { handleChange(event); colorHandleChange(event); }} name='color' style={{ backgroundColor: color }} value={color}>
                             <option>color</option>
                             <option value="#ADD8E6" style={{ backgroundColor: "#ADD8E6" }}>Light Blue</option>
@@ -110,7 +110,7 @@ const Home = ({ navbar: NavBar, page: Page }) => {
                             <option value="#d0b783" style={{ backgroundColor: "#d0b783" }}>Tan</option>
                         </select>
                         {/* {color && <p>Selected Color: {color}</p>} */}
-                        <input className='model-div-file-input' type="file"  accept="image/*" name='image' onChange={handleImageField} /><br />
+                        <input className='model-div-file-input' type="file" accept="image/*" name='image' onChange={handleImageField} /><br />
                         <input className="model-div-button" type='submit' value="Add Product" />
                     </form>
 

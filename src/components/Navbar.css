@@ -20,3 +20,15 @@
     color: white;
     border: none;
 }
+
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+
+    /*  */
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .navBar-login {
+        height: 3vh;
+        width: 15%;
+    }
+}

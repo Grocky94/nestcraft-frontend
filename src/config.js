@@ -1,9 +1,10 @@
 // config.js
 
 const config = {
-    backendUrl: "http://localhost:4000"
+    backendUrl: "https://nestcraft-backend-assignment.onrender.com";
 };
 
 export default config;
 
-// "https://nestcraft-backend-assignment.onrender.com" ||
+
+

@@ -48,11 +48,18 @@
     color: aliceblue;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
+}
+
+#reg-submit-btn:active {
+    background-color: white;
+    color: coral;
 }
 
 #reg-last {
     text-align: center;
     color: #000;
+    cursor: pointer;
 }
 
 @media only screen and (min-width: 600px) and (max-width: 900px) {

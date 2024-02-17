@@ -57,7 +57,7 @@ const Login = () => {
                     <input className="login-input" type='password' name='password' onChange={handleChange} value={userData.password} autocomplete="off" /><br />
                     <input className="login-input-btn" type='submit' value="Login" />
                 </form>
-                <p id='login-last'>If you are a new user <b onClick={() => redirect("/register")}>Register</b></p>
+                <p id='login-last'>If you are a new user <b onClick={() => redirect("/Register")}>Register</b></p>
             </div>
         </div>
     )

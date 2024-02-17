@@ -4,12 +4,13 @@ import { useDispatch } from "react-redux";
 import { signIn } from '../redux/logSlice';
 import "./Login.css"
 import { useNavigate } from "react-router-dom"
+import config from '../config';
 
 const Login = () => {
     const [userData, setUserData] = useState({ email: "", password: "" });
     const redirect = useNavigate()
     const dispatch = useDispatch()
-    console.log(signIn, "here")
+    // console.log(signIn, "here")
     const handleChange = (event) => {
         setUserData({ ...userData, [event.target.name]: event.target.value })
     }
@@ -17,7 +18,7 @@ const Login = () => {
         event.preventDefault();
         if (userData.email && userData.password) {
             try {
-                const response = await axios.post("http://localhost:4000/login", { userData })
+                const response = await axios.post(`${config.backendUrl}/login`, { userData })
                 if (response.data.success) {
                     alert(response.data.message)
                     localStorage.setItem("token", JSON.stringify(response.data.userObj.token))
@@ -53,7 +54,7 @@ const Login = () => {
                     <label className='login-labels'>Email:</label><br />
                     <input className="login-input" type='email' name='email' onChange={handleChange} value={userData.email} autocomplete="off" /><br />
                     <label className='login-labels' >Password:</label><br />
-                    <input className="login-input" type='password' name='password' onChange={handleChange} value={userData.password} autocomplete="off"/><br />
+                    <input className="login-input" type='password' name='password' onChange={handleChange} value={userData.password} autocomplete="off" /><br />
                     <input className="login-input-btn" type='submit' value="Login" />
                 </form>
                 <p id='login-last'>If you are a new user <b onClick={() => redirect("/register")}>Register</b></p>

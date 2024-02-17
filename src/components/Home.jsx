@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import "./Home.css";
+import config from '../config';
 // import { useNavigate } from 'react-router-dom';
 
 
@@ -59,7 +60,7 @@ const Home = ({ navbar: NavBar, page: Page }) => {
                 formData.append('image', serviceData.image);
 
                 const token = JSON.parse(localStorage.getItem("token"));
-                const response = await axios.post("http://localhost:4000/addservice", formData, {
+                const response = await axios.post(`${config.backendUrl}/addservice`, formData, {
                     headers: {
                         'Content-Type': 'multipart/form-data',
                         'Authorization': `Bearer ${token}`
@@ -69,15 +70,13 @@ const Home = ({ navbar: NavBar, page: Page }) => {
                     alert(response.data.message);
                     setServiceData({ name: "", description: "", color: "", image: null });
                     setModel(false);
-
+                    setColor("")
                 }
             } catch (error) {
-                console.log("Error response:", error.response);
-                if (error.response && error.response.data && error.response.data.error) {
-                    alert(error.response.data.error); // Display backend validation error
+                if (error.response && error.response.data && error.response.data.message) {
+                    alert(error.response.data.message);
                 } else {
-                    console.log(error);
-                    alert("An error occurred. Please try again later."); // Generic error message
+                    alert("An error occurred. Please try again later.");
                 }
             }
         } else {
@@ -98,9 +97,9 @@ const Home = ({ navbar: NavBar, page: Page }) => {
                     <form onSubmit={handleSubmit} >
                         <h1 className='model-div-title'>Add Category</h1><span className='model-span' onClick={() => setModel(false)}>X</span>
                         <label className='model-div-label'>Name:</label><br />
-                        <input type='text' name='name' className="model-div-input" onChange={handleChange} value={serviceData.name} autocomplete="off" /><br />
+                        <input type='text' name='name' className="model-div-input" onChange={handleChange} value={serviceData.name} /><br />
                         <label className='model-div-label'>Description:</label><br />
-                        <input type='text' name='description' className="model-div-input" onChange={handleChange} value={serviceData.description} autocomplete="off" /><br />
+                        <input type='text' name='description' className="model-div-input" onChange={handleChange} value={serviceData.description} /><br />
                         <select className="model-div-select" onChange={(event) => { handleChange(event); colorHandleChange(event); }} name='color' style={{ backgroundColor: color }} value={color}>
                             <option>color</option>
                             <option value="#ADD8E6" style={{ backgroundColor: "#ADD8E6" }}>Light Blue</option>

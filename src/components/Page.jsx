@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import "./Page.css"
 import axios from 'axios'
+import config from '../config'
 const Page = ({ model }) => {
     const [page, setPage] = useState(1)
     const [showCategory, setShowCategory] = useState([])
@@ -13,7 +14,7 @@ const Page = ({ model }) => {
         const viewer = async () => {
             try {
                 const token = JSON.parse(localStorage.getItem("token"))
-                let url = `http://localhost:4000/viewcategory?page=${page}&token=${token}`;
+                let url = `${config.backendUrl}/viewcategory?page=${page}&token=${token}`;
                 if (search) {
                     url += `&search=${encodeURIComponent(search)}`;
                 }
@@ -68,10 +69,11 @@ const Page = ({ model }) => {
         try {
             // Send selected checkbox values to the backend
             const token = JSON.parse(localStorage.getItem("token"));
-            const response = await axios.post("http://localhost:4000/deleteSelected", { selectedCheckboxes, token });
+            const response = await axios.post(`${config.backendUrl}/deleteSelected`, { selectedCheckboxes, token });
             if (response.data.success) {
                 alert(response.data.message)
                 setShowCategory(prevState => prevState.filter(cat => !selectedCheckboxes.includes(cat._id)));
+                setSelectAllChecked(false)
             } else {
                 alert('something went wrong try again ');
             }
@@ -79,8 +81,6 @@ const Page = ({ model }) => {
             console.log(error.message);
         }
     };
-
-
 
     return (
         <div>
@@ -97,11 +97,12 @@ const Page = ({ model }) => {
                 ) : (
                     showCategory.map((cat) => {
                         counter++;
+                        console.log(cat, "cat")
                         return (
                             <div className='multiple-service-children' key={cat._id} style={{ backgroundColor: `${cat.color}` }}>
                                 <input className='page-checkbox-children' type='checkbox' checked={selectedCheckboxes.includes(cat._id)} onChange={(event) => handleCheckboxChange(event, cat._id)} />
                                 <div className='image-circle-frame'>
-                                    <img className="image-circle" src={`http://localhost:4000/image/${cat.image}`} alt='upload' />
+                                    <img className="image-circle" src={cat.image} alt='upload' />
                                 </div>
                                 <div className='short-detail-body'>
                                     <p className='short-detail-body-title'>{cat.name}</p>

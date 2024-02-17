@@ -17,7 +17,7 @@ function App() {
     if (!localStorage.getItem('token')) {
       navigate("/login")
     }
-  }, []);
+  }, [navigate]);
   return (
     <Routes>
       <Route exact path="/" element={<Home navbar={NavBar} page={Page} />} />
